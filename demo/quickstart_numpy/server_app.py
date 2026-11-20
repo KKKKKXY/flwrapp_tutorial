@@ -15,6 +15,7 @@ app = ServerApp()
 def main(grid: Grid, context: Context) -> None:
     """Main entry point for the ServerApp."""
 
+    print("👋 Hello from the ServerApp! This is a custom message that I added.")
     # Read run config
     num_rounds: int = context.run_config["num-server-rounds"]
 
@@ -31,3 +32,4 @@ def main(grid: Grid, context: Context) -> None:
         initial_arrays=arrays,
         num_rounds=num_rounds,
     )
+    print("Goodbye from the ServerApp! This is my first custom Flower App 🚀!")
