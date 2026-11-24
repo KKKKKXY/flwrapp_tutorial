@@ -4,6 +4,9 @@ import torch
 from flwr.app import ArrayRecord, ConfigRecord, Context, MetricRecord
 from flwr.serverapp import Grid, ServerApp
 from flwr.serverapp.strategy import FedAvg
+from flwr.serverapp.strategy import FedAdagrad
+from pytorchexample.custom_strategy import CustomFedAdagrad
+
 
 from pytorchexample.task import Net, load_centralized_dataset, test
 
@@ -24,10 +27,13 @@ def main(grid: Grid, context: Context) -> None:
     global_model = Net()
     arrays = ArrayRecord(global_model.state_dict())
 
-    # Initialize FedAvg strategy
-    strategy = FedAvg(fraction_evaluate=fraction_evaluate)
+    # # Initialize FedAvg strategy
+    # strategy = FedAvg(fraction_evaluate=fraction_evaluate)
+    # strategy = FedAdagrad(fraction_evaluate=fraction_evaluate)
+    strategy = CustomFedAdagrad(fraction_evaluate=fraction_evaluate)
 
-    # Start strategy, run FedAvg for `num_rounds`
+    # # Start strategy, run FedAvg for `num_rounds`
+    # Start strategy, run FedAdagrad for `num_rounds`
     result = strategy.start(
         grid=grid,
         initial_arrays=arrays,
