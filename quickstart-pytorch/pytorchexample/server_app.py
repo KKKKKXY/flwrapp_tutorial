@@ -7,6 +7,9 @@ from flwr.serverapp.strategy import FedAvg
 from flwr.serverapp.strategy import FedAdagrad
 from pytorchexample.custom_strategy import CustomFedAdagrad
 
+from datetime import datetime
+from pathlib import Path
+
 
 from pytorchexample.task import Net, load_centralized_dataset, test
 
@@ -31,6 +34,16 @@ def main(grid: Grid, context: Context) -> None:
     # strategy = FedAvg(fraction_evaluate=fraction_evaluate)
     # strategy = FedAdagrad(fraction_evaluate=fraction_evaluate)
     strategy = CustomFedAdagrad(fraction_evaluate=fraction_evaluate)
+
+    # Get the current date and time
+    current_time = datetime.now()
+    run_dir = current_time.strftime("%Y-%m-%d/%H-%M-%S")
+    # Save path is based on the current directory
+    save_path = Path.cwd() / f"outputs/{run_dir}"
+    save_path.mkdir(parents=True, exist_ok=False)
+
+    # Set the path where results and model checkpoints will be saved
+    strategy.set_save_path(save_path)
 
     # # Start strategy, run FedAvg for `num_rounds`
     # Start strategy, run FedAdagrad for `num_rounds`

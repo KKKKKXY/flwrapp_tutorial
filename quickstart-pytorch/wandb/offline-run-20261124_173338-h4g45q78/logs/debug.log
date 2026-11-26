@@ -1,0 +1,33 @@
+2026-11-24 17:33:38,291 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_setup.py:_flush():81] Current SDK version is 0.31.2
+2026-11-24 17:33:38,292 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_setup.py:_flush():81] Configure stats pid to 14779
+2026-11-24 17:33:38,292 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-11-24 17:33:38,292 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_init.py:setup_run_log_directory():740] Logging user logs to /Users/mya/flwrapp_tutorial/quickstart-pytorch/wandb/offline-run-20261124_173338-h4g45q78/logs/debug.log
+2026-11-24 17:33:38,292 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_init.py:setup_run_log_directory():741] Logging internal logs to /Users/mya/flwrapp_tutorial/quickstart-pytorch/wandb/offline-run-20261124_173338-h4g45q78/logs/debug-internal.log
+2026-11-24 17:33:38,292 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_init.py:init():784] calling init triggers
+2026-11-24 17:33:38,292 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_init.py:init():789] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2026-11-24 17:33:38,293 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_init.py:init():832] starting backend
+2026-11-24 17:33:38,786 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_init.py:init():847] sending inform_init request
+2026-11-24 17:33:38,814 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_init.py:init():852] backend started and connected
+2026-11-24 17:33:38,816 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_init.py:init():922] updated telemetry
+2026-11-24 17:33:38,888 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_init.py:init():940] communicating run to backend with 90.0 second timeout
+2026-11-24 17:33:39,452 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_run.py:_console_start():2531] atexit reg
+2026-11-24 17:33:39,452 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_run.py:_redirect():2381] redirect: wrap_raw
+2026-11-24 17:33:39,452 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_run.py:_redirect():2450] Wrapping output streams.
+2026-11-24 17:33:39,452 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_run.py:_redirect():2473] Redirects installed.
+2026-11-24 17:33:39,711 INFO    Thread-5 (server_th_with_start_checks):14779 [wandb_init.py:init():1007] run started, returning control to user process
+2026-11-24 17:34:15,882 INFO    wandb-AsyncioManager-main:14779 [service_client.py:_forward_responses():122] Reached EOF.
+2026-11-24 17:34:15,883 INFO    wandb-AsyncioManager-main:14779 [mailbox.py:close():154] Closing mailbox, abandoning 1 handles.
+2026-11-24 17:34:15,884 ERROR   wandb-AsyncioManager-main:14779 [asyncio_manager.py:fn_wrap_exceptions():197] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "/Users/mya/.flwr/runtime-envs/14235611522519164871/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_manager.py", line 195, in fn_wrap_exceptions
+  File "/Users/mya/.flwr/runtime-envs/14235611522519164871/lib/python3.12/site-packages/wandb/sdk/lib/run_messages.py", line 90, in loop
+  File "/Users/mya/.flwr/runtime-envs/14235611522519164871/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_compat.py", line 279, in race
+  File "/opt/homebrew/Caskroom/miniconda/base/envs/flwr_env/lib/python3.12/contextlib.py", line 217, in __aexit__
+    await anext(self.gen)
+  File "/Users/mya/.flwr/runtime-envs/14235611522519164871/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_compat.py", line 241, in open_task_group
+  File "/Users/mya/.flwr/runtime-envs/14235611522519164871/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_compat.py", line 181, in _wait_all
+  File "/Users/mya/.flwr/runtime-envs/14235611522519164871/lib/python3.12/site-packages/wandb/sdk/lib/run_messages.py", line 113, in _print_all
+  File "/Users/mya/.flwr/runtime-envs/14235611522519164871/lib/python3.12/site-packages/wandb/sdk/mailbox/mailbox_handle.py", line 127, in wait_async
+  File "/Users/mya/.flwr/runtime-envs/14235611522519164871/lib/python3.12/site-packages/wandb/sdk/mailbox/response_handle.py", line 123, in wait_async
+wandb.sdk.mailbox.mailbox_handle.HandleAbandonedError
